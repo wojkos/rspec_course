@@ -26,4 +26,3 @@ RSpec.describe Card do
     expect(card.suit).to eq(comparision), "Custom error message:\nExpected: #{comparision} but got: #{card.suit}"
   end
 end
-
