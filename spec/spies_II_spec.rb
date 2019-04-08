@@ -24,11 +24,11 @@ RSpec.describe Garage do
   end
 
   it '#add_to_collection' do
-    subject.add_to_collection(['Renault Scenic'])
-    expect(Car).to have_receive(:new).with('Renault Scenic')
-    expect(subject.storage.lenght).to eq(1)
-    expect { subject.add_to_collection('Renault Megane') }.to change { subject.storage.length }.from(1).to(2)
+    subject.add_to_collection('Renault Scenic')
+    expect(Car).to have_received(:new).with('Renault Scenic')
+    expect(subject.storage.length).to eq(1)
+    expect { subject.add_to_collection('Renault Megane') }
+      .to change {subject.storage.length }.from(1).to(2)
     expect(subject.storage.first).to eq(car)
-
   end
 end
